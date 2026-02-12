@@ -1,0 +1,170 @@
+/* Import Inter font - MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Math content styling */
+.math-content {
+  line-height: 1.8;
+}
+
+.math-content .katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Quiz answer buttons */
+.quiz-option {
+  @apply p-4 rounded-xl border-2 text-left transition-all flex items-start gap-3;
+}
+
+.quiz-option:hover {
+  @apply border-teal-200 bg-teal-50/30;
+}
+
+.quiz-option.selected {
+  @apply border-teal-500 bg-teal-50 ring-1 ring-teal-500;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Chat bubble animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-bubble {
+  animation: slideUp 0.2s ease-out;
+}
+
+/* Prevent text selection in quiz */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Custom focus styles */
+input:focus, button:focus {
+  outline: none;
+}
+
+input:focus {
+  @apply ring-2 ring-teal-500 border-transparent;
+}
+
+/* Toast notifications */
+.toast {
+  @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg z-50;
+  animation: slideUp 0.3s ease-out;
+}
+
+.toast-success {
+  @apply bg-green-500 text-white;
+}
+
+.toast-error {
+  @apply bg-red-500 text-white;
+}
+
+.toast-warning {
+  @apply bg-orange-500 text-white;
+}
+
+/* Progress bar animation */
+.progress-bar {
+  transition: width 0.5s ease-out;
+}
+
+/* Leaderboard rank colors */
+.rank-1 { @apply bg-yellow-100 text-yellow-600; }
+.rank-2 { @apply bg-gray-100 text-gray-600; }
+.rank-3 { @apply bg-orange-100 text-orange-600; }
+
+/* Theory content markdown styling */
+.theory-content h1 { @apply text-2xl font-bold mt-6 mb-4; }
+.theory-content h2 { @apply text-xl font-bold mt-5 mb-3; }
+.theory-content h3 { @apply text-lg font-bold mt-4 mb-2; }
+.theory-content p { @apply my-2 leading-relaxed; }
+.theory-content ul { @apply list-disc list-inside my-3 space-y-1; }
+.theory-content ol { @apply list-decimal list-inside my-3 space-y-1; }
+.theory-content strong { @apply font-bold; }
+.theory-content em { @apply italic; }
+.theory-content code { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono; }
+
+/* Scrollbar for chat */
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom scrollbar for Admin Panel */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
